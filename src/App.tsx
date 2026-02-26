@@ -41,6 +41,11 @@ function AppContent() {
       style={
         {
           "--nav-offset": `${navOffsetPx}px`,
+          "--font-display": siteConfig.typography.displayFontFamily,
+          "--font-body": siteConfig.typography.bodyFontFamily,
+          "--font-nav": siteConfig.typography.navFontFamily,
+          // "--font-nav": siteConfig.typography.displayFontFamily,
+          fontFamily: "var(--font-body)",
         } as React.CSSProperties
       }
     >

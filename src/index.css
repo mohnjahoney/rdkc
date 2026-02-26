@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Blair';
-  src: url('/fonts/BlairMdITC_TT_Medium.ttf') format('truetype');
-  font-weight: normal;
+  font-family: "Blair";
+  src: url("/fonts/blair-medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -41,10 +41,6 @@
     --ring: 0 0% 7%;
 
     --radius: 0.25rem;
-
-    --font-display: 'Blair', Georgia, serif;
-    --font-body: 'Inter', system-ui, sans-serif;
-    --font-nav: 'Inter', system-ui, sans-serif;
   }
 }
 
@@ -59,7 +55,6 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-body);
   }
 }
 
