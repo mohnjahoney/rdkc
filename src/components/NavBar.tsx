@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { siteConfig } from '@/config/siteConfig';
 import { useBreakpoint } from '@/hooks/useBreakpoint';
 import { Menu, X, ChevronDown } from 'lucide-react';
-
+import { scrollToId } from "@/lib/scroll";
 const navHeight = siteConfig.navigation.heightPx;
 
 const menuItems = [
@@ -14,10 +14,13 @@ const menuItems = [
   { label: 'Contact', anchor: 'contact' },
 ];
 
-function scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
+
+// function scrollToSection(id: string) {
+//   document.getElementById(id)?.scrollIntoView({
+//     behavior: siteConfig.scroll.smoothScroll ? "smooth" : "auto",
+//     block: "start",
+//   });
+// }
 
 export default function NavBar() {
   const bp = useBreakpoint();
@@ -27,6 +30,7 @@ export default function NavBar() {
   const [moreOpen, setMoreOpen] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const closeAll = useCallback(() => {
     setMenuOpen(false);
@@ -49,7 +53,7 @@ export default function NavBar() {
         setMoreOpen(false);
       }
     };
-    document.addEventListener('mousedown', handler);
+    document.addEventListener('pointerdown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, [moreOpen]);
 
@@ -63,12 +67,17 @@ export default function NavBar() {
   }, [closeAll]);
 
   const handleNavClick = (anchor: string) => {
+    console.log("handleNavClick", anchor, location.pathname);
     closeAll();
-    if (location.pathname !== '/') {
-      window.location.hash = '#/';
-      setTimeout(() => scrollToSection(anchor), 100);
+
+    if (location.pathname !== "/") {
+      navigate("/"); // HashRouter turns this into #/
+      // wait for the route to render, then scroll
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => scrollToId(anchor));
+      });
     } else {
-      scrollToSection(anchor);
+      scrollToId(anchor);
     }
   };
 
@@ -92,7 +101,7 @@ export default function NavBar() {
           }}
         >
           <img
-            src="/images/branding/RDKC_logo.png"
+            src={siteConfig.branding.logoSrc}
             alt="RDKC"
             className="h-8 w-auto"
             style={{ transform: `scaleY(${siteConfig.typography.wordmarkScaleY})` }}
@@ -118,6 +127,7 @@ export default function NavBar() {
           {!isMobile && (
             <div className="relative" ref={moreRef}>
               <button
+                
                 onClick={() => setMoreOpen(!moreOpen)}
                 className="text-sm tracking-wide text-foreground/80 hover:text-foreground transition-colors flex items-center gap-1"
               >
@@ -125,10 +135,11 @@ export default function NavBar() {
                 <ChevronDown className={`h-3 w-3 transition-transform ${moreOpen ? 'rotate-180' : ''}`} />
               </button>
               {moreOpen && (
-                <div className="absolute right-0 top-full mt-2 bg-background border border-border rounded shadow-lg py-2 min-w-[200px]">
+                <div className="absolute right-0 top-full mt-2 z-50 bg-background border border-border rounded shadow-lg py-2 min-w-[200px]">
                   {menuItems.map((item) => (
                     <button
                       key={item.anchor}
+                      
                       onClick={() => handleNavClick(item.anchor)}
                       className="block w-full text-left px-4 py-2 text-sm text-foreground/80 hover:text-foreground hover:bg-muted transition-colors"
                     >
@@ -138,6 +149,7 @@ export default function NavBar() {
                   <div className="border-t border-border my-1" />
                   <Link
                     to="/collection"
+          
                     onClick={closeAll}
                     className="block px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors"
                   >

@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
+import { scrollToId } from "@/lib/scroll";
 
 interface ContactPrefillContextType {
   subject: string;
@@ -17,10 +18,7 @@ export function ContactPrefillProvider({ children }: { children: ReactNode }) {
 
   const scrollToContact = useCallback((prefill?: string) => {
     if (prefill) setSubject(prefill);
-    setTimeout(() => {
-      const el = document.getElementById('contact');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }, 50);
+    setTimeout(() => scrollToId("contact"), 50);
   }, []);
 
   return (

@@ -11,7 +11,7 @@ export default function AboutSection() {
             alt="Rachel D.K. Clark"
             className="w-full h-auto"
             onError={(e) => {
-              (e.target as HTMLImageElement).src = siteConfig.assets.placeholderImageSrc;
+              (e.currentTarget as HTMLImageElement).src = siteConfig.ui.placeholderImageSrc;
             }}
           />
         </div>

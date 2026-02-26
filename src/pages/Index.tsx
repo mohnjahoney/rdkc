@@ -12,11 +12,11 @@ import imageMetadata from '@/data/image_metadata.json';
 import showsData from '@/data/shows.json';
 import workshopsData from '@/data/workshops.json';
 
-const scrollMargin = siteConfig.navigation.isSticky
-  ? `${Math.max(siteConfig.navigation.heightPx.desktop, siteConfig.navigation.heightPx.mobile) + 16}px`
-  : '0px';
+// const scrollMargin = siteConfig.navigation.isSticky
+//   ? `${Math.max(siteConfig.navigation.heightPx.desktop, siteConfig.navigation.heightPx.mobile) + 16}px`
+//   : '0px';
 
-const sectionStyle = { scrollMarginTop: scrollMargin };
+// const sectionStyle = { scrollMarginTop: scrollMargin };
 
 const selectedImages = imageMetadata.slice(0, siteConfig.gallery.numberOfSelectedImages);
 
@@ -39,7 +39,7 @@ const Index = () => {
 
       <main className="max-w-7xl mx-auto px-4">
         {/* Selected Works */}
-        <section id="selected-works" style={sectionStyle} className="py-16 md:py-24">
+        <section id="selected-works" className="py-16 md:py-24">
           <h1
             className="text-2xl md:text-3xl mb-12 md:mb-16 text-center"
             style={{ fontFamily: 'var(--font-display)' }}
@@ -55,7 +55,7 @@ const Index = () => {
         </section>
 
         {/* Shows & Talks */}
-        <section id="shows" style={sectionStyle} className="py-16 md:py-24">
+        <section id="shows" className="py-16 md:py-24">
           <h2 className="text-xl md:text-2xl mb-10 md:mb-14" style={{ fontFamily: 'var(--font-display)' }}>
             Shows & Talks
           </h2>
@@ -63,7 +63,7 @@ const Index = () => {
         </section>
 
         {/* Workshops & Classes */}
-        <section id="workshops" style={sectionStyle} className="py-16 md:py-24">
+        <section id="workshops" className="py-16 md:py-24">
           <h2 className="text-xl md:text-2xl mb-10 md:mb-14" style={{ fontFamily: 'var(--font-display)' }}>
             Workshops & Classes
           </h2>
@@ -71,7 +71,7 @@ const Index = () => {
         </section>
 
         {/* Online Workshop */}
-        <section id="online-workshop" style={sectionStyle} className="py-16 md:py-24">
+        <section id="online-workshop" className="py-16 md:py-24">
           <h2 className="text-xl md:text-2xl mb-10 md:mb-14" style={{ fontFamily: 'var(--font-display)' }}>
             Online Coat Workshop
           </h2>
@@ -79,7 +79,7 @@ const Index = () => {
         </section>
 
         {/* About */}
-        <section id="about" style={sectionStyle} className="py-16 md:py-24">
+        <section id="about" className="py-16 md:py-24">
           <h2 className="text-xl md:text-2xl mb-10 md:mb-14" style={{ fontFamily: 'var(--font-display)' }}>
             About
           </h2>
@@ -87,7 +87,7 @@ const Index = () => {
         </section>
 
         {/* Contact */}
-        <section id="contact" style={sectionStyle} className="py-16 md:py-24">
+        <section id="contact" className="py-16 md:py-24">
           <h2 className="text-xl md:text-2xl mb-10 md:mb-14" style={{ fontFamily: 'var(--font-display)' }}>
             Booking & Contact
           </h2>

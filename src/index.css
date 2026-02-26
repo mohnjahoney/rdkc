@@ -62,3 +62,8 @@
     font-family: var(--font-body);
   }
 }
+
+/* Anchor offset for sticky navigation */
+section[id] {
+  scroll-margin-top: var(--nav-offset);
+}

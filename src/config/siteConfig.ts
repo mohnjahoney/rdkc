@@ -46,7 +46,7 @@ export interface SiteConfig {
 
   scroll: {
     smoothScroll: boolean;
-    scrollOffsetPx: number;
+    // scrollOffsetPx: number;
   };
 
   lightbox: {
@@ -56,8 +56,11 @@ export interface SiteConfig {
     lockBodyScroll: boolean;
   };
 
-  assets: {
+  ui: {
     placeholderImageSrc: string;
+  };
+  branding: {
+    logoSrc: string;
   };
 }
 
@@ -93,7 +96,7 @@ export const siteConfig: SiteConfig = {
     displayFontFamily: "Blair",
     bodyFontFamily: "Inter",
     navFontFamily: "Inter",
-    wordmarkScaleY: 0.75,
+    wordmarkScaleY: 1,
   },
 
   colors: {
@@ -116,7 +119,7 @@ export const siteConfig: SiteConfig = {
 
   scroll: {
     smoothScroll: true,
-    scrollOffsetPx: 72,
+    // scrollOffsetPx: 72,
   },
 
   lightbox: {
@@ -126,9 +129,13 @@ export const siteConfig: SiteConfig = {
     lockBodyScroll: true,
   },
 
-  assets: {
+  ui: {
     placeholderImageSrc: "/images/ui/placeholder.png",
   },
+  branding: {
+    logoSrc: "/images/branding/RDKC_logo.png",
+  },
+
 } as const;
 
 export default siteConfig;

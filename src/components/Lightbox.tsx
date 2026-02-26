@@ -116,7 +116,7 @@ export default function Lightbox({ images, currentIndex, isOpen, onClose }: Ligh
           alt={image.alt || image.title}
           className="max-h-[70vh] w-auto max-w-full object-contain"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = siteConfig.assets.placeholderImageSrc;
+            (e.currentTarget as HTMLImageElement).src = siteConfig.ui.placeholderImageSrc;
           }}
         />
         <div className="mt-4 text-center max-w-lg">

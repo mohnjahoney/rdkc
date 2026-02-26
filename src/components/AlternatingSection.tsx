@@ -44,7 +44,7 @@ export default function AlternatingSection({ programs, intro }: AlternatingSecti
                 className="w-full h-auto"
                 loading="lazy"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = siteConfig.assets.placeholderImageSrc;
+                  (e.currentTarget as HTMLImageElement).src = siteConfig.ui.placeholderImageSrc;
                 }}
               />
             </div>

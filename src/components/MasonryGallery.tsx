@@ -51,7 +51,7 @@ export default function MasonryGallery({ images, mode, showCaptions, onImageClic
                   className="w-full h-auto block"
                   loading="lazy"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = siteConfig.assets.placeholderImageSrc;
+                    (e.currentTarget as HTMLImageElement).src = siteConfig.ui.placeholderImageSrc;
                   }}
                   style={{
                     transition: `transform ${motion.hoverDurationMsDesktop}ms ${motion.hoverEasingDesktop}`,
@@ -60,7 +60,7 @@ export default function MasonryGallery({ images, mode, showCaptions, onImageClic
                     if (bp === 'desktop') (e.target as HTMLElement).style.transform = `scale(${motion.hoverScaleDesktop})`;
                   }}
                   onMouseLeave={(e) => {
-                    (e.target as HTMLElement).style.transform = 'scale(1)';
+                    (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
                   }}
                 />
                 {showCaptions && (
