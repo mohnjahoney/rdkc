@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-const TRIANGLE_SRC = '/images/branding/blue-triangle-lower.svg';
+const TRIANGLE_SRC = assetUrl('/images/branding/blue-triangle-lower.svg');
 
 export interface TriangleUnderlineProps {
   /** Number of triangle shapes in the row. */

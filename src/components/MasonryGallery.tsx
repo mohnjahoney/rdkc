@@ -1,6 +1,7 @@
 import { siteConfig } from '@/config/siteConfig';
 import { useBreakpoint } from '@/hooks/useBreakpoint';
 import type { GalleryMode } from '@/config/siteConfig';
+import { assetUrl } from "@/lib/assetUrl";
 
 interface GalleryImage {
   src: string;
@@ -46,7 +47,7 @@ export default function MasonryGallery({ images, mode, showCaptions, onImageClic
                 onKeyDown={(e) => e.key === 'Enter' && onImageClick(globalIdx)}
               >
                 <img
-                  src={img.src}
+                  src={assetUrl(img.src)}
                   alt={img.alt || `${img.title}${img.year ? ` (${img.year})` : ''}`}
                   className="w-full h-auto block"
                   loading="lazy"
