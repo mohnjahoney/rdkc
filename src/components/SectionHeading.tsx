@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { assetUrl } from "@/lib/assetUrl";
 
 const TRIANGLE_SRC = assetUrl('/images/branding/blue-triangle-lower.svg');
 
