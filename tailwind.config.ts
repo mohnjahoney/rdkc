@@ -14,6 +14,9 @@ export default {
     },
     extend: {
       colors: {
+        // Trying out accent color for "inquire" buttons
+        brand: "hsl(var(--brand))", "brand-foreground": "hsl(var(--brand-foreground))",
+        
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

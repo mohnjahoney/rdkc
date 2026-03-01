@@ -4,6 +4,7 @@ import { siteConfig } from '@/config/siteConfig';
 import { useBreakpoint } from '@/hooks/useBreakpoint';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { scrollToId } from "@/lib/scroll";
+import BrandLogo from "@/components/BrandLogo";
 const navHeight = siteConfig.navigation.heightPx;
 
 const menuItems = [
@@ -100,12 +101,14 @@ export default function NavBar() {
             if (location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <img
+          {/* <img
             src={siteConfig.branding.logoSrc}
             alt="RDKC"
-            className="h-8 w-auto"
+            className="h-16 w-auto"
             style={{ transform: `scaleY(${siteConfig.typography.wordmarkScaleY})` }}
-          />
+          /> */}
+          {/* import BrandLogo from "@/components/BrandLogo"; */}
+          <BrandLogo />
         </Link>
 
         {/* Right side */}

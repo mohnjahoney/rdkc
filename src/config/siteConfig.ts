@@ -74,12 +74,12 @@ export const siteConfig: SiteConfig = {
     showGridCaptions: false,
     masonryColumns: {
       selected: {
-        mobile: 2,
-        desktop: 3,
-      },
-      full: {
         mobile: 3,
         desktop: 4,
+      },
+      full: {
+        mobile: 4,
+        desktop: 5,
       },
     },
   },
@@ -96,7 +96,7 @@ export const siteConfig: SiteConfig = {
     displayFontFamily: "Blair",
     bodyFontFamily: "Inter",
     navFontFamily: "Inter",
-    wordmarkScaleY: 1,
+    wordmarkScaleY: 0.8,
   },
 
   colors: {
@@ -133,7 +133,7 @@ export const siteConfig: SiteConfig = {
     placeholderImageSrc: "/images/ui/placeholder.png",
   },
   branding: {
-    logoSrc: "/images/branding/RDKC_logo.png",
+    logoSrc: "/images/branding/RDKC-logo-white-background.png",
   },
 
 } as const;

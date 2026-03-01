@@ -12,6 +12,29 @@
 
 @layer base {
   :root {
+
+    /* Trying out an accent color for "inquire" buttons */
+    /* --brand: 42 25% 45%; */
+    /* --brand: 42 32% 45%; */
+    /* --brand: 42 30% 50%; */
+    /* --brand: 40 35% 42%; */
+    /* --brand: 42 40% 45%; */
+    /* --brand: 40 45% 52%; */
+    --brand: 38 50% 38%;
+    --brand-foreground: 0 0% 100%;
+    
+    /* Gray-gold */
+    /* --brand: 42 18% 48%; */
+    /* --brand-foreground: 0 0% 100%; */
+
+    /* Antique brass */
+    /* --brand: 38 22% 40%; */
+    /* --brand-foreground: 0 0% 100%; */
+
+    /* Warm slate */
+    /* --brand: 35 10% 45%; */
+    /* --brand-foreground: 0 0% 100%; */
+
     --background: 0 0% 100%;
     --foreground: 0 0% 7%;
 

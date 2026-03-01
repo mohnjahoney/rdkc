@@ -4,7 +4,7 @@ export default function OnlineWorkshopSection() {
   const { scrollToContact } = useContactPrefill();
 
   return (
-    <div className="max-w-2xl">
+    <div className="max-w-4xl">
       <p className="text-foreground/80 leading-relaxed mb-4" style={{ fontFamily: 'var(--font-body)' }}>
         Rachel's online coat workshop is a four-part series designed for makers who want to create a
         one-of-a-kind coat at their own pace. Each session builds on the last, covering pattern

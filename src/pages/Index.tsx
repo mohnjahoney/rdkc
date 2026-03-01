@@ -3,6 +3,7 @@ import NavBar from '@/components/NavBar';
 import MasonryGallery from '@/components/MasonryGallery';
 import Lightbox from '@/components/Lightbox';
 import AlternatingSection from '@/components/AlternatingSection';
+import SectionHeading from '@/components/SectionHeading';
 import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
 import OnlineWorkshopSection from '@/components/OnlineWorkshopSection';
@@ -38,8 +39,8 @@ const Index = () => {
       <NavBar />
 
       <main className="max-w-7xl mx-auto px-4">
-        {/* Selected Works */}
-        <section id="selected-works" className="py-16 md:py-24">
+        {/* Selected Works - full width of main */}
+        <section id="selected-works" className="py-12 md:py-16">
           <h1
             className="text-2xl md:text-3xl mb-12 md:mb-16 text-center"
             style={{ fontFamily: 'var(--font-display)' }}
@@ -54,45 +55,49 @@ const Index = () => {
           />
         </section>
 
+        {/* Narrower content: ~70% width, centered */}
+        <div className="max-w-3xl mx-auto">
         {/* Shows & Talks */}
-        <section id="shows" className="py-16 md:py-24">
-          <h2 className="text-xl md:text-2xl mb-10 md:mb-14" style={{ fontFamily: 'var(--font-display)' }}>
+        <section id="shows" className="py-12 md:py-16">
+          <SectionHeading numberOfTriangles={0} triangleSpacing={42}>
             Shows & Talks
-          </h2>
+          </SectionHeading>
+          
           <AlternatingSection programs={showsData.programs} intro={showsData.intro}/>
         </section>
 
         {/* Workshops & Classes */}
-        <section id="workshops" className="py-16 md:py-24">
-          <h2 className="text-xl md:text-2xl mb-10 md:mb-14" style={{ fontFamily: 'var(--font-display)' }}>
+        <section id="workshops" className="py-12 md:py-16">
+          <SectionHeading numberOfTriangles={0} triangleSpacing={86}>
             Workshops & Classes
-          </h2>
+          </SectionHeading>
           <AlternatingSection programs={workshopsData.workshops} intro={workshopsData.intro} />
         </section>
 
         {/* Online Workshop */}
-        <section id="online-workshop" className="py-16 md:py-24">
-          <h2 className="text-xl md:text-2xl mb-10 md:mb-14" style={{ fontFamily: 'var(--font-display)' }}>
+        <section id="online-workshop" className="py-12 md:py-16">
+          <SectionHeading numberOfTriangles={0} triangleSpacing={91}>
             Online Coat Workshop
-          </h2>
+          </SectionHeading>
           <OnlineWorkshopSection />
         </section>
 
         {/* About */}
-        <section id="about" className="py-16 md:py-24">
-          <h2 className="text-xl md:text-2xl mb-10 md:mb-14" style={{ fontFamily: 'var(--font-display)' }}>
-            About
-          </h2>
+        <section id="about" className="py-12 md:py-16 ">
+          <SectionHeading numberOfTriangles={0} triangleSpacing={42}>
+            About Rachel
+          </SectionHeading>
           <AboutSection />
         </section>
 
         {/* Contact */}
-        <section id="contact" className="py-16 md:py-24">
-          <h2 className="text-xl md:text-2xl mb-10 md:mb-14" style={{ fontFamily: 'var(--font-display)' }}>
+        <section id="contact" className="py-12 md:py-16">
+          <SectionHeading numberOfTriangles={0} triangleSpacing={69}>
             Booking & Contact
-          </h2>
+          </SectionHeading>
           <ContactSection />
         </section>
+        </div>
       </main>
 
       {/* Footer */}
